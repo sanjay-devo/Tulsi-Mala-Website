@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Devotional Touch | Handcrafted Tulsi Mala</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ba1a1a",
+                        "outline-variant": "#d4c2c0",
+                        "surface-variant": "#ece1d0",
+                        "surface-container-high": "#f2e7d5",
+                        "secondary": "#785834",
+                        "on-surface-variant": "#504442",
+                        "surface-bright": "#fff8f1",
+                        "surface-container": "#f7eddb",
+                        "on-tertiary-fixed-variant": "#5a4139",
+                        "outline": "#827472",
+                        "on-background": "#201b10",
+                        "on-tertiary-fixed": "#2a1710",
+                        "on-secondary-fixed-variant": "#5e411f",
+                        "on-tertiary-container": "#b19188",
+                        "inverse-surface": "#353024",
+                        "secondary-container": "#fed2a5",
+                        "surface-dim": "#e3d9c7",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#7b5551",
+                        "on-primary-fixed": "#2f1411",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#e9bf93",
+                        "primary-fixed": "#ffdad6",
+                        "surface-container-highest": "#ece1d0",
+                        "on-secondary-fixed": "#2b1700",
+                        "tertiary": "#2a1710",
+                        "primary-container": "#472825",
+                        "secondary-fixed": "#ffddba",
+                        "tertiary-fixed-dim": "#e2bfb4",
+                        "on-secondary-container": "#795934",
+                        "surface-container-low": "#fdf2e0",
+                        "tertiary-container": "#412b24",
+                        "primary": "#2f1411",
+                        "tertiary-fixed": "#ffdbd0",
+                        "background": "#fff8f1",
+                        "on-primary-container": "#ba8e89",
+                        "on-primary-fixed-variant": "#603e3a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#201b10",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#faefde",
+                        "surface": "#fff8f1",
+                        "inverse-primary": "#ecbbb6",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#ecbbb6",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1120px",
+                        "stack-md": "24px",
+                        "section-gap": "80px",
+                        "margin-mobile": "16px",
+                        "stack-sm": "12px",
+                        "gutter": "24px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Noto Serif"],
+                        "headline-lg": ["Noto Serif"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-xl": ["Noto Serif"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #fff8f1; color: #201b10; overflow-x: hidden; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .soft-elevation { box-shadow: 0 18px 60px -35px rgba(47, 20, 17, 0.18); }
+        .soft-border { border: 1px solid rgba(47, 20, 17, 0.06); }
+        .organic-border { border-radius: 38% 62% 60% 40% / 42% 50% 50% 58%; }
+        .button-soft { transition: transform 0.28s ease, box-shadow 0.28s ease, background-color 0.28s ease; box-shadow: 0 12px 38px -25px rgba(47, 20, 17, 0.18); }
+        .button-soft:hover { transform: translateY(-1px); box-shadow: 0 18px 48px -28px rgba(47, 20, 17, 0.22); }
+        .button-soft:active { transform: scale(0.98); }
+        .icon-button { display: inline-flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 9999px; background: rgba(255,255,255,0.94); border: 1px solid rgba(47,20,17,0.08); box-shadow: 0 12px 28px -20px rgba(47,20,17,0.16); transition: transform 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease; }
+        .icon-button:hover { transform: translateY(-1px) scale(1.01); background: rgba(255,255,255,1); box-shadow: 0 18px 36px -22px rgba(47,20,17,0.22); }
+        .icon-button:active { transform: translateY(0) scale(0.97); }
+        .hamburger {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 9999px;
+            background: rgba(255,255,255,0.94);
+            border: 1px solid rgba(47,20,17,0.08);
+            box-shadow: 0 12px 28px -20px rgba(47,20,17,0.16);
+            transition: transform 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease;
+        }
+        .hamburger:hover {
+            transform: translateY(-1px) scale(1.01);
+            background: rgba(255,255,255,1);
+            box-shadow: 0 18px 36px -22px rgba(47,20,17,0.22);
+        }
+        .hamburger input {
+            display: none;
+        }
+        .hamburger svg {
+            height: 1.6rem;
+            width: 1.6rem;
+            transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hamburger .line {
+            fill: none;
+            stroke: currentColor;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-width: 3;
+            transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hamburger .line-top-bottom {
+            stroke-dasharray: 12 63;
+        }
+        .hamburger.is-open svg {
+            transform: rotate(-45deg);
+        }
+        .hamburger.is-open .line-top-bottom {
+            stroke-dasharray: 20 300;
+            stroke-dashoffset: -32.42;
+        }
+        .checkout-sheet { transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.42s ease; }
+        .mobile-only { display: flex; }
+        @media (min-width: 768px) { .mobile-only { display: none !important; } }
+        @media (max-width: 767px) {
+            body { padding-top: 110px; }
+            header { transition: transform 0.25s ease; }
+            header.header-hidden-mobile { transform: translateY(-100%); }
+        }
+        .text-soft { color: rgba(32, 27, 16, 0.78); }
+        .copy-smooth { letter-spacing: 0.01em; line-height: 1.72; }
+        .hero-card { min-height: 380px; }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<!-- TopAppBar -->
+<header class="bg-surface/94 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/10">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-4 flex items-center justify-between gap-4"><div class="flex items-center gap-3">
+<label id="mobile-menu-open" class="hamburger text-primary md:hidden cursor-pointer" aria-label="Open menu" aria-controls="mobile-menu-drawer" aria-expanded="false">
+    <svg viewBox="0 0 32 32" class="fill-none hamburger-svg">
+      <path d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22" class="line line-top-bottom"></path>
+      <path d="M7 16 27 16" class="line"></path>
+    </svg>
+  </label>
+<div class="flex items-center gap-4">
+<div class="rounded-3xl bg-surface-container-highest p-2 md:p-3 soft-elevation">
+<img alt="The Devotional Touch" class="h-6 md:h-10 w-auto" src="uploads/logo/tulsi-mala-logo-landscape.png"/>
+</div>
+<nav class="hidden md:flex items-center gap-4 text-sm font-medium text-primary/80">
+<a class="transition-colors hover:text-primary" href="#collection">Collection</a>
+<a class="transition-colors hover:text-primary" href="#sacred">Sacred</a>
+<a class="transition-colors hover:text-primary" href="#bhakti">Bhakti</a>
+<a class="transition-colors hover:text-primary" href="#explore">Explore</a>
+<a class="transition-colors hover:text-primary" href="#guidance">Guidance</a>
+</nav>
+</div>
+  </div>
+  <button class="material-symbols-outlined icon-button text-primary" aria-label="Search">search</button>
+</div>
+</header>
+<div id="mobile-menu-drawer" class="fixed inset-0 z-[9999] pointer-events-none opacity-0 transition-opacity duration-300" aria-hidden="true">
+<div id="mobile-menu-backdrop" class="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
+<div id="mobile-menu-panel" class="absolute left-0 top-0 h-full w-[84%] max-w-xs bg-surface text-primary shadow-[0_20px_60px_-20px_rgba(47,20,17,0.35)] transform -translate-x-full will-change-transform transform-gpu transition-transform duration-300 ease-out" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-heading">
+<div class="flex items-center justify-between p-5 border-b border-surface-container-high">
+<div id="mobile-menu-heading" class="text-base font-semibold">Menu</div>
+<button id="mobile-menu-close" class="material-symbols-outlined icon-button text-primary" aria-label="Close menu">close</button>
+</div>
+<div class="flex flex-col gap-4 p-5">
+<a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container-low hover:text-primary" href="#collection">Collection</a>
+<a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container-low hover:text-primary" href="#sacred">Sacred</a>
+<a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container-low hover:text-primary" href="#bhakti">Bhakti</a>
+<a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container-low hover:text-primary" href="#explore">Explore</a>
+<a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container-low hover:text-primary" href="#guidance">Guidance</a>
+</div>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="relative overflow-hidden mt-24 hidden md:block">
+<div class="absolute inset-0">
+<img alt="Sacred Tulsi Mala" class="w-full h-full object-cover brightness-90" data-alt="A cinematic, high-resolution shot of a traditional Tulsi Japa Mala draped over a weathered sandalwood surface. The lighting is warm and golden, reminiscent of early morning sunlight streaming through a temple window. Fine wooden textures and intricate bead carvings are visible in sharp detail. The background is a soft, out-of-focus temple courtyard filled with a peaceful, spiritual atmosphere in ivory and earthy brown tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_zFGixXYCbCH-QZzRkmSGRixpvaUZaTdRx4p0XsRbYoQ4EZzhTK2FeQPpaso0HQ9B5T50yYwEujAjJvFEz4UrIGGie0IDY7aKChg5PP3lcJdt_uNdlDveTv8_2RCd3FTGRsefUnBwTka5T0z15wVphqqkvrmQ2mC9i7l0iOoBydxrmCgrXl7QSVnT90lEoosRbrF71I3Xno_MRIXY1rPyFlyy1jRWrIIBK3bD4iej3ZXBePBYViuQFRHVyz4FHniV8rNfJRFBhUaj"/>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.14),transparent_24%),linear-gradient(180deg,rgba(47,20,17,0.24),rgba(47,20,17,0.78))]"></div>
+</div>
+<div class="relative max-w-container-max mx-auto px-margin-mobile md:px-gutter py-20 lg:py-24 grid gap-10 lg:grid-cols-[1.2fr_0.9fr] items-end">
+<div class="max-w-xl text-white">
+<span class="inline-flex items-center rounded-full bg-[#f8ebe1]/90 px-4 py-2 text-label-sm font-medium tracking-[0.3em] uppercase text-secondary/90 mb-6">Sourced from sacred gardens</span>
+<h1 class="font-headline-xl text-5xl md:text-[4rem] leading-[0.98] tracking-[-0.04em] max-w-xl">A warm devotional mala made for quiet mornings and sacred intention.</h1>
+<p class="mt-6 text-body-lg copy-smooth max-w-xl text-surface-bright/90">Each Tulsi mala is hand-strung with care, shaped by artisans who honour ritual and stillness. The collection is built to feel real, grounded and quietly reverent.</p>
+<div class="mt-10 flex flex-wrap gap-4">
+<button class="bg-primary-container text-on-primary-container rounded-full px-8 py-4 font-label-md text-label-md button-soft shadow-soft hover:bg-primary">Shop Collection</button>
+<button class="border border-white/30 text-white rounded-full px-8 py-4 font-label-md text-label-md button-soft hover:border-white/60 hover:bg-white/10">Discover the Craft</button>
+</div>
+</div>
+<div class="relative">
+<div class="hero-card rounded-[2.5rem] bg-surface/90 border border-white/15 shadow-soft backdrop-blur-xl overflow-hidden">
+<div class="relative h-full p-6 flex flex-col justify-between gap-5">
+<div class="rounded-[2rem] overflow-hidden bg-[#f7ede0] soft-elevation">
+<img alt="Handcrafted Tulsi Mala close-up" class="w-full h-72 object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqdy07sNZGDd8AazUZsMitu3g7NIwOC9Cml4xcA1rt2mywDSTNy1OiJChoThjulExOeTkHdiEgOwrUn4p5fH3T--rcZoJJPBp_vjJwXh3Ltws42i3WIIJZgTr4nBfu2TgaJHjfjkL-TYaQR0NbEjLK7w4A_kT29y4l7fh9Fbrg7qhWGc7kk5-4J3sHGYM8nimhWDFvWAm-0JL4Hq3BhnYUDBkDI-7ib40U8dDvU3Wjf1ONiKrRAS9DP63Dmqu6DUqjppRYRZamkCYT"/>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-2xl bg-secondary/10 text-secondary grid place-items-center">
+<span class="material-symbols-outlined text-2xl">spa</span>
+</div>
+<div>
+<p class="text-label-sm uppercase tracking-[0.26em] text-secondary/70">Golden Tulsi</p>
+<p class="font-semibold text-primary">Aurelia Sacred Mala</p>
+</div>
+</div>
+<p class="text-body-md text-primary/80">Hand-selected holy basil beads, silk-threaded with a calming mantra for daily practice.</p>
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-primary">₹499</span>
+<span class="text-label-sm text-outline line-through">₹899</span>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container rounded-full px-6 py-4 font-label-md button-soft hover:bg-primary" data-product-name="Aurelia Tulsi Japa Mala" data-product-price="499" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBqdy07sNZGDd8AazUZsMitu3g7NIwOC9Cml4xcA1rt2mywDSTNy1OiJChoThjulExOeTkHdiEgOwrUn4p5fH3T--rcZoJJPBp_vjJwXh3Ltws42i3WIIJZgTr4nBfu2TgaJHjfjkL-TYaQR0NbEjLK7w4A_kT29y4l7fh9Fbrg7qhWGc7kk5-4J3sHGYM8nimhWDFvWAm-0JL4Hq3BhnYUDBkDI-7ib40U8dDvU3Wjf1ONiKrRAS9DP63Dmqu6DUqjppRYRZamkCYT">Buy Now</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Grid -->
+<section id="explore" class="pb-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+<!-- Product Card 1 -->
+<div class="group flex flex-col gap-4 md:pb-4">
+<div class="relative aspect-[4/5] rounded-[1.75rem] overflow-hidden bg-surface-container-low soft-elevation soft-border">
+<img alt="Traditional Tulsi Kanthi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up studio photograph of a premium Tulsi Kanthi necklace resting on a natural linen cloth. The beads are a rich, dark brown with natural wood grain visible. Soft side lighting highlights the tactile texture of the hand-carved beads. The background is a soft ivory gradient, maintaining a minimalist and high-end artisanal look consistent with a premium spiritual brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqdy07sNZGDd8AazUZsMitu3g7NIwOC9Cml4xcA1rt2mywDSTNy1OiJChoThjulExOeTkHdiEgOwrUn4p5fH3T--rcZoJJPBp_vjJwXh3Ltws42i3WIIJZgTr4nBfu2TgaJHjfjkL-TYaQR0NbEjLK7w4A_kT29y4l7fh9Fbrg7qhWGc7kk5-4J3sHGYM8nimhWDFvWAm-0JL4Hq3BhnYUDBkDI-7ib40U8dDvU3Wjf1ONiKrRAS9DP63Dmqu6DUqjppRYRZamkCYT"/>
+<span class="absolute top-3 left-3 bg-secondary text-white text-[10px] px-3 py-1 rounded-full font-bold">BEST SELLER</span>
+<span class="absolute top-3 right-3 bg-error-container text-on-error-container text-[10px] px-3 py-1 rounded-full font-bold">45% OFF</span>
+</div>
+<div class="px-1">
+<h3 class="font-headline-md text-body-lg text-primary truncate">Aurelia Tulsi Japa Mala</h3>
+<div class="flex items-center gap-1 my-2">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-sm text-on-surface-variant font-medium">4.8 (245)</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-primary">₹499</span>
+<span class="text-label-sm text-outline line-through">₹899</span>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-3 rounded-full font-label-md text-label-md button-soft" data-product-name="Aurelia Tulsi Japa Mala" data-product-price="499" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBqdy07sNZGDd8AazUZsMitu3g7NIwOC9Cml4xcA1rt2mywDSTNy1OiJChoThjulExOeTkHdiEgOwrUn4p5fH3T--rcZoJJPBp_vjJwXh3Ltws42i3WIIJZgTr4nBfu2TgaJHjfjkL-TYaQR0NbEjLK7w4A_kT29y4l7fh9Fbrg7qhWGc7kk5-4J3sHGYM8nimhWDFvWAm-0JL4Hq3BhnYUDBkDI-7ib40U8dDvU3Wjf1ONiKrRAS9DP63Dmqu6DUqjppRYRZamkCYT">Buy Now</button>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col gap-4 md:mt-6 lg:mt-0 md:pb-4">
+<div class="relative aspect-[4/5] rounded-[1.75rem] overflow-hidden bg-surface-container-low soft-elevation soft-border">
+<img alt="Spiritual Bracelet" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-[center_15%]" data-alt="A macro shot of a handcrafted Tulsi bead bracelet with a silver-colored deity charm. The bracelet is draped over a smooth, rounded river stone. The environment is serene, with warm, diffused sunlight and a palette of creams and soft tans. The composition is artistic and asymmetric, highlighting the organic beauty of the holy basil wood beads." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmbMQOWUvvh_jR7_M-LWtNycFwoW6YM2Grj8wdN-Z3-n13bZuCDkoWa60SyI1Ui9AH3SO4p7DYLPer8qz3IhBJammTDFoUWcVmx995K8ojJzKG4SM1KyByYWpRh7XkBBdiL3y9g1z0Unowq9vH5ppaOWZ0w3MIa0IAicbfEsjL_FISEYi2T1HbNsyYX9Rp3veJeqbSxkisYkRwWwImgPZRtM59jZLbTTin0eosMxG8kpijW0KpVKmRLr2NSHub9XnvwhoDGzg8iJ9V"/>
+</div>
+<div class="px-1">
+<h3 class="font-headline-md text-body-lg text-primary truncate">Sacred Wrist Band</h3>
+<div class="flex items-center gap-1 my-2">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-sm text-on-surface-variant font-medium">4.9 (182)</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-primary">₹349</span>
+<span class="text-label-sm text-outline line-through">₹699</span>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-3 rounded-full font-label-md text-label-md button-soft" data-product-name="Sacred Wrist Band" data-product-price="349" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCmbMQOWUvvh_jR7_M-LWtNycFwoW6YM2Grj8wdN-Z3-n13bZuCDkoWa60SyI1Ui9AH3SO4p7DYLPer8qz3IhBJammTDFoUWcVmx995K8ojJzKG4SM1KyByYWpRh7XkBBdiL3y9g1z0Unowq9vH5ppaOWZ0w3MIa0IAicbfEsjL_FISEYi2T1HbNsyYX9Rp3veJeqbSxkisYkRwWwImgPZRtM59jZLbTTin0eosMxG8kpijW0KpVKmRLr2NSHub9XnvwhoDGzg8iJ9V">Buy Now</button>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col gap-4 md:pb-4">
+<div class="relative aspect-[4/5] rounded-[1.75rem] overflow-hidden bg-surface-container-low soft-elevation soft-border">
+<img alt="Pure Tulsi Beads" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-[center_20%]" data-alt="Three different sizes of Tulsi Kanthi malas arranged artistically on a vintage brass tray. The scene is illuminated with a soft, warm candle-like glow, casting gentle shadows that give a sense of depth and holiness. The colors are dominated by sandalwood beige, dark mahogany, and muted brass tones, creating an ancestral and meditative visual experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcWMfSpDvDk74Dk8rRNQ2Ff1ZXdu3ToH3cb6ddERTN8PGKrdPhRuGsf00SgYr-Evfrv5REJ1OoYYfnTHfH_OzgcN1FZtKKehJzaktKbhOWYzhJyQMrHT1AuHR9SHu7GJImuVaeSnyzVAc2B5jxspuBHkB6znFo08HdJQprGDY-s1wcZCxz9IeRkCcij6czIJoUAh6hNRAXLFPmopsoGwu2pQL8o-NrtNVnVbU4gaAWFu_SLw1RVPA5nnzVPRbc8xv6p9RmKdZTns6O"/>
+<span class="absolute top-3 left-3 bg-secondary text-white text-[10px] px-3 py-1 rounded-full font-bold">NEW</span>
+</div>
+<div class="px-1">
+<h3 class="font-headline-md text-body-lg text-primary truncate">Radha-Krishna Kanthi</h3>
+<div class="flex items-center gap-1 my-2">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-sm text-on-surface-variant font-medium">4.7 (96)</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-primary">₹799</span>
+<span class="text-label-sm text-outline line-through">₹1,299</span>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-3 rounded-full font-label-md text-label-md button-soft" data-product-name="Radha-Krishna Kanthi" data-product-price="799" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCcWMfSpDvDk74Dk8rRNQ2Ff1ZXdu3ToH3cb6ddERTN8PGKrdPhRuGsf00SgYr-Evfrv5REJ1OoYYfnTHfH_OzgcN1FZtKKehJzaktKbhOWYzhJyQMrHT1AuHR9SHu7GJImuVaeSnyzVAc2B5jxspuBHkB6znFo08HdJQprGDY-s1wcZCxz9IeRkCcij6czIJoUAh6hNRAXLFPmopsoGwu2pQL8o-NrtNVnVbU4gaAWFu_SLw1RVPA5nnzVPRbc8xv6p9RmKdZTns6O">Buy Now</button>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col gap-4 md:mt-6 lg:mt-0 md:pb-4">
+<div class="relative aspect-[4/5] rounded-[1.75rem] overflow-hidden bg-surface-container-low soft-elevation soft-border">
+<img alt="Artisan Mala" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-[center_5%]" data-alt="A detailed view of a craftsman's hands carefully stringing brown Tulsi beads onto a silk thread. The lighting is focused and warm, emphasizing the manual labor and artisanal quality of the product. The workspace is cluttered with natural wood shavings and spiritual artifacts, set against a background of soft cream-colored walls in a minimalist Indian interior." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAo2qBwosPUI2G7y8cD4oMdqf_pH4XpLvUx7JmoGwWINNS30mwlwlhxsVWYQR_j_yVKkg0a-U1N5ZStjiCy3vgCEud8kse58GHViaHwdUfvJbr8vyzuI2lS-z_ZVBRNfVRybvw8gdphAY4C_qnXCBreMP8YLzbklHz87Z1YgNU_KbwRn4NeS9RHPRv3ifix4R6A1b-mAeeb7N1w1h7KUu4JPu0V8C2aUC7D7gEcVkOQN416ThunLfuyDm7UUb7sUBJaNh-yWVqWUeB"/>
+</div>
+<div class="px-1">
+<h3 class="font-headline-md text-body-lg text-primary truncate">Brahmand Japa Mala</h3>
+<div class="flex items-center gap-1 my-2">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-sm text-on-surface-variant font-medium">4.8 (312)</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-primary">₹549</span>
+<span class="text-label-sm text-outline line-through">₹999</span>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container py-3 rounded-full font-label-md text-label-md button-soft" data-product-name="Brahmand Japa Mala" data-product-price="549" data-product-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCAo2qBwosPUI2G7y8cD4oMdqf_pH4XpLvUx7JmoGwWINNS30mwlwlhxsVWYQR_j_yVKkg0a-U1N5ZStjiCy3vgCEud8kse58GHViaHwdUfvJbr8vyzuI2lS-z_ZVBRNfVRybvw8gdphAY4C_qnXCBreMP8YLzbklHz87Z1YgNU_KbwRn4NeS9RHPRv3ifix4R6A1b-mAeeb7N1w1h7KUu4JPu0V8C2aUC7D7gEcVkOQN416ThunLfuyDm7UUb7sUBJaNh-yWVqWUeB">Buy Now</button>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section id="sacred" class="bg-surface-container py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+<div class="rounded-[2rem] bg-white/95 p-6 soft-elevation soft-border">
+<div class="w-16 h-16 bg-secondary/10 rounded-2xl grid place-items-center mx-auto mb-4 text-secondary text-3xl">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<p class="font-headline-md text-body-md text-primary">Original Tulsi Products</p>
+</div>
+<div class="rounded-[2rem] bg-white/95 p-6 soft-elevation soft-border">
+<div class="w-16 h-16 bg-secondary/10 rounded-2xl grid place-items-center mx-auto mb-4 text-secondary text-3xl">
+<span class="material-symbols-outlined">pan_tool</span>
+</div>
+<p class="font-headline-md text-body-md text-primary">Handmade by artisans</p>
+</div>
+<div class="rounded-[2rem] bg-white/95 p-6 soft-elevation soft-border">
+<div class="w-16 h-16 bg-secondary/10 rounded-2xl grid place-items-center mx-auto mb-4 text-secondary text-3xl">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<p class="font-headline-md text-body-md text-primary">Cash on Delivery</p>
+</div>
+<div class="rounded-[2rem] bg-white/95 p-6 soft-elevation soft-border">
+<div class="w-16 h-16 bg-secondary/10 rounded-2xl grid place-items-center mx-auto mb-4 text-secondary text-3xl">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<p class="font-headline-md text-body-md text-primary">Fast delivery across India</p>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section id="bhakti" class="py-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="max-w-3xl mx-auto text-center mb-12">
+<span class="text-label-sm uppercase tracking-[0.35em] text-secondary/80">Customer Reflections</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-4">Echoes of Devotion</h2>
+<p class="mt-4 text-body-lg text-soft max-w-2xl mx-auto">Our customers choose Tulsi Mala for its sincerity, warmth and the feeling that each piece is made with prayer.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white p-8 rounded-[2rem] soft-elevation soft-border">
+<div class="flex gap-1 mb-5">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface-variant mb-6">"The fragrance and the weight of the beads are so authentic. It feels like I've brought a piece of Vrindavan home. Exceptional craftsmanship."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest organic-border flex items-center justify-center text-primary font-bold">RK</div>
+<span class="font-label-md text-primary">Raghav K.</span>
+</div>
+</div>
+<div class="bg-white p-8 rounded-[2rem] soft-elevation soft-border">
+<div class="flex gap-1 mb-5">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface-variant mb-6">"Finding real Tulsi beads online is hard, but The Devotional Touch delivers what they promise. Fast delivery too!"</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest organic-border flex items-center justify-center text-primary font-bold">AM</div>
+<span class="font-label-md text-primary">Ananya M.</span>
+</div>
+</div>
+<div class="bg-white p-8 rounded-[2rem] soft-elevation soft-border">
+<div class="flex gap-1 mb-5">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="italic text-on-surface-variant mb-6">"The packaging itself felt like a ceremony. The Kanthi is beautiful and stays comfortable all day. Truly sacred."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest organic-border flex items-center justify-center text-primary font-bold">VS</div>
+<span class="font-label-md text-primary">Vikram S.</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Guidance CTA -->
+<section id="guidance" class="mb-section-gap max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="rounded-[2.5rem] bg-surface-container-high p-8 md:p-12 border border-white/10 shadow-soft">
+<div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] items-center">
+<div>
+<span class="text-label-sm uppercase tracking-[0.35em] text-secondary/80">Need a gentle guide?</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mt-4">Let our artisans and spiritual curators help you find the right mala.</h2>
+<p class="mt-4 text-body-lg text-soft max-w-xl">We compose each offer with intention. If you want a calmer ritual, a meaningful gift, or a companion for daily meditation, we are here to help.</p>
+</div>
+<button class="self-start bg-primary-container text-on-primary-container rounded-full px-10 py-4 font-label-md button-soft hover:bg-primary">Speak with an expert</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#3a2d24] text-[#f4e6d8] py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid gap-10 lg:grid-cols-[1.2fr_0.95fr]">
+<div class="space-y-6">
+<h2 class="font-headline-xl text-3xl">The Devotional Touch</h2>
+<p class="max-w-xl text-body-lg text-[#e6d7c0]">Rooted in tradition, every mala is shaped by hand and sent with care. Our pieces are made for people who seek ritual, comfort and a quiet connection to the sacred.</p>
+<p class="italic text-soft max-w-lg">“Crafted with devotion, worn with faith.”</p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="font-bold text-[#f4e6d8] mb-6 uppercase tracking-wider text-label-md">Explore</h4>
+<ul class="flex flex-col gap-4 text-[#d8c7b1]">
+<li class="hover:text-white transition-colors cursor-pointer">Collection</li>
+<li class="hover:text-white transition-colors cursor-pointer">Sacred Rituals</li>
+<li class="hover:text-white transition-colors cursor-pointer">Artisan Story</li>
+<li class="hover:text-white transition-colors cursor-pointer">Guidance</li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-[#f4e6d8] mb-6 uppercase tracking-wider text-label-md">Support</h4>
+<ul class="flex flex-col gap-4 text-[#d8c7b1]">
+<li class="hover:text-white transition-colors cursor-pointer">Shipping</li>
+<li class="hover:text-white transition-colors cursor-pointer">Returns</li>
+<li class="hover:text-white transition-colors cursor-pointer">Privacy</li>
+<li class="hover:text-white transition-colors cursor-pointer">Contact</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="mt-14 border-t border-white/10 pt-6 text-center text-[#d8c7b1] text-label-sm">© 2024 The Devotional Touch. Crafted with Ancestral Wisdom.</div>
+</footer>
+<!-- Bottom Checkout Sheet -->
+<div class="checkout-sheet fixed inset-0 z-[100] flex items-end justify-center bg-black/40 translate-y-full opacity-0 pointer-events-none" id="checkout-sheet">
+<div class="bg-surface w-full max-w-md rounded-t-[2.5rem] p-6 md:p-8 flex flex-col gap-6 soft-elevation pointer-events-auto">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-primary">Complete Your Order</h3>
+<button class="material-symbols-outlined text-outline" onclick="toggleCheckout(false)">close</button>
+</div>
+<div id="order-form-panel" class="space-y-4">
+<div class="flex gap-4 p-3 bg-surface-container-low rounded-3xl items-center">
+<img alt="Product Thumbnail" id="sheet-product-image" class="w-16 h-16 rounded-2xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqdy07sNZGDd8AazUZsMitu3g7NIwOC9Cml4xcA1rt2mywDSTNy1OiJChoThjulExOeTkHdiEgOwrUn4p5fH3T--rcZoJJPBp_vjJwXh3Ltws42i3WIIJZgTr4nBfu2TgaJHjfjkL-TYaQR0NbEjLK7w4A_kT29y4l7fh9Fbrg7qhWGc7kk5-4J3sHGYM8nimhWDFvWAm-0JL4Hq3BhnYUDBkDI-7ib40U8dDvU3Wjf1ONiKrRAS9DP63Dmqu6DUqjppRYRZamkCYT"/>
+<div>
+<p id="sheet-product-name" class="font-bold text-primary">Aurelia Tulsi Japa Mala</p>
+<p id="sheet-product-price" class="text-secondary font-medium">₹499</p>
+</div>
+</div>
+<form id="order-form" class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-outline ml-2">Full Name</label>
+<input id="customer-name" class="rounded-2xl border-outline-variant bg-surface-container-lowest py-3 px-4 focus:ring-secondary/30" placeholder="Enter your name" type="text" required/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-outline ml-2">Mobile Number</label>
+<input id="customer-phone" class="rounded-2xl border-outline-variant bg-surface-container-lowest py-3 px-4 focus:ring-secondary/30" placeholder="Enter 10-digit mobile" type="tel" required/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-outline ml-2">Address</label>
+<textarea id="customer-address" class="rounded-2xl border-outline-variant bg-surface-container-lowest py-3 px-4 focus:ring-secondary/30" placeholder="House no, Street, Landmark" rows="2" required></textarea>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-outline ml-2">Pincode</label>
+<input id="customer-pincode" class="rounded-2xl border-outline-variant bg-surface-container-lowest py-3 px-4 focus:ring-secondary/30" placeholder="6-digits" type="text" required/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-outline ml-2">City</label>
+<input id="customer-city" class="rounded-2xl border-outline-variant bg-surface-container-lowest py-3 px-4 focus:ring-secondary/30" placeholder="Your City" type="text" required/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-label-sm text-outline ml-2">Quantity</label>
+<input id="order-quantity" class="rounded-2xl border-outline-variant bg-surface-container-lowest py-3 px-4 focus:ring-secondary/30" type="number" min="1" value="1" required/>
+</div>
+<button id="place-order-button" class="mt-4 bg-primary-container text-on-primary-container py-4 rounded-full font-headline-md text-body-lg button-soft" type="submit">Place Order</button>
+</form>
+</div>
+<div id="order-success" class="hidden rounded-[2rem] bg-secondary-container/90 p-6 text-center">
+<div class="mx-auto mb-4 w-20 h-20 rounded-full bg-secondary/10 grid place-items-center text-secondary text-4xl soft-elevation">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<h3 class="font-headline-md text-primary mb-2">Order Confirmed</h3>
+<p class="text-body-md text-soft mb-4">Your sacred mala is being prepared with devotion. We will reach out soon to confirm delivery.</p>
+<button class="bg-primary-container text-on-primary-container rounded-full px-8 py-3 font-label-md button-soft" type="button" onclick="toggleCheckout(false)">Continue Browsing</button>
+</div>
+</div>
+</div>
+</div>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.15.0/firebase-app.js";
+    import { getDatabase, ref, push, set, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.15.0/firebase-database.js";
+
+    const firebaseConfig = {
+        databaseURL: "https://tulsi-mala-default-rtdb.firebaseio.com/"
+    };
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const ordersRef = ref(db, 'orders');
+
+    const sheet = document.getElementById('checkout-sheet');
+    const productImage = document.getElementById('sheet-product-image');
+    const productName = document.getElementById('sheet-product-name');
+    const productPrice = document.getElementById('sheet-product-price');
+    const orderForm = document.getElementById('order-form');
+    const orderSuccess = document.getElementById('order-success');
+    const orderFormPanel = document.getElementById('order-form-panel');
+    const placeOrderButton = document.getElementById('place-order-button');
+
+    function toggleCheckout(show) {
+        if (show) {
+            sheet.classList.remove('translate-y-full', 'opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'hidden';
+        } else {
+            sheet.classList.add('translate-y-full', 'opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+            orderSuccess.classList.add('hidden');
+            orderFormPanel.classList.remove('hidden');
+            orderForm.reset();
+            document.getElementById('order-quantity').value = 1;
+        }
+    }
+
+    function openCheckout(details) {
+        productName.textContent = details.name;
+        productPrice.textContent = `₹${details.price}`;
+        productImage.src = details.image;
+        productImage.alt = `${details.name} product image`;
+        placeOrderButton.dataset.price = details.price;
+        toggleCheckout(true);
+    }
+
+    document.querySelectorAll('[data-product-name]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            openCheckout({
+                name: btn.dataset.productName,
+                price: btn.dataset.productPrice,
+                image: btn.dataset.productImage
+            });
+        });
+    });
+
+    orderForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        placeOrderButton.disabled = true;
+        placeOrderButton.textContent = 'Placing order...';
+
+        const name = document.getElementById('customer-name').value.trim();
+        const phone = document.getElementById('customer-phone').value.trim();
+        const address = document.getElementById('customer-address').value.trim();
+        const pincode = document.getElementById('customer-pincode').value.trim();
+        const city = document.getElementById('customer-city').value.trim();
+        const quantity = Number(document.getElementById('order-quantity').value) || 1;
+        const product = productName.textContent;
+        const price = Number(placeOrderButton.dataset.price || 0);
+
+        try {
+            const newOrderRef = push(ordersRef);
+            await set(newOrderRef, {
+                customerName: name,
+                phoneNumber: phone,
+                address,
+                pincode,
+                city,
+                productName: product,
+                productPrice: price,
+                quantity,
+                orderTimestamp: serverTimestamp()
+            });
+
+            orderFormPanel.classList.add('hidden');
+            orderSuccess.classList.remove('hidden');
+        } catch (error) {
+            alert('Sorry, we could not place your order right now. Please try again.');
+            console.error(error);
+        }
+
+        placeOrderButton.disabled = false;
+        placeOrderButton.textContent = 'Place Order';
+    });
+</script>
+<script>
+    const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+    const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+    const mobileMenuOpen = document.getElementById('mobile-menu-open');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+    const mobileHeader = document.querySelector('header');
+    const body = document.body;
+    let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    let isMenuOpen = false;
+
+    function toggleMobileMenu(show) {
+        if (!mobileMenuDrawer || !mobileMenuPanel) {
+            console.warn('Mobile menu elements not found');
+            return;
+        }
+
+        if (show) {
+            mobileMenuDrawer.classList.remove('pointer-events-none', 'opacity-0');
+            mobileMenuDrawer.setAttribute('aria-hidden', 'false');
+            mobileMenuOpen?.setAttribute('aria-expanded', 'true');
+            mobileMenuOpen?.classList.add('is-open');
+            mobileMenuPanel.classList.remove('-translate-x-full');
+            body.style.overflow = 'hidden';
+            isMenuOpen = true;
+        } else {
+            mobileMenuPanel.classList.add('-translate-x-full');
+            mobileMenuDrawer.classList.add('opacity-0');
+            mobileMenuDrawer.setAttribute('aria-hidden', 'true');
+            mobileMenuOpen?.setAttribute('aria-expanded', 'false');
+            mobileMenuOpen?.classList.remove('is-open');
+            setTimeout(() => mobileMenuDrawer.classList.add('pointer-events-none'), 300);
+            body.style.overflow = '';
+            isMenuOpen = false;
+        }
+    }
+
+    if (mobileMenuOpen) {
+        mobileMenuOpen.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMobileMenu(!isMenuOpen);
+        });
+    }
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', () => {
+            toggleMobileMenu(false);
+        });
+    }
+    if (mobileMenuBackdrop) {
+        mobileMenuBackdrop.addEventListener('click', () => {
+            toggleMobileMenu(false);
+        });
+    }
+    if (mobileMenuPanel) {
+        mobileMenuPanel.querySelectorAll('a').forEach(link => link.addEventListener('click', () => toggleMobileMenu(false)));
+    }
+
+    window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            toggleMobileMenu(false);
+        }
+    });
+
+    window.addEventListener('scroll', () => {
+        if (!window.matchMedia('(max-width: 767px)').matches) {
+            return;
+        }
+        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScrollY > lastScrollY) {
+            mobileHeader?.classList.add('header-hidden-mobile');
+        } else if (currentScrollY < lastScrollY) {
+            mobileHeader?.classList.remove('header-hidden-mobile');
+        }
+        lastScrollY = currentScrollY;
+    });
+</script>
+</body></html>
