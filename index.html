@@ -165,39 +165,65 @@
             header { transition: transform 0.25s ease; }
             header.header-hidden-mobile { transform: translateY(-100%); }
         }
-        .text-soft { color: rgba(32, 27, 16, 0.78); }
-        .copy-smooth { letter-spacing: 0.01em; line-height: 1.72; }
+        .mobile-submenu { display: none; transition: all 0.3s ease; }
+        .mobile-submenu.open { display: block; }
         .hero-card { min-height: 380px; }
         #search-input::placeholder { color: rgba(130, 116, 114, 0.6); }
         #search-input::-webkit-autofill { -webkit-box-shadow: 0 0 0 1000px #fff8f1 inset; -webkit-text-fill-color: #2f1411; }
         #search-suggestions::-webkit-scrollbar { width: 6px; }
         #search-suggestions::-webkit-scrollbar-track { background: transparent; }
         #search-suggestions::-webkit-scrollbar-thumb { background: rgba(130, 116, 114, 0.2); border-radius: 3px; }
+        .mobile-submenu {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.28s ease, opacity 0.28s ease;
+        }
+        .mobile-submenu.open {
+            max-height: 999px;
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="font-body-md text-body-md">
 <!-- TopAppBar -->
 <header class="bg-surface-container/70 backdrop-blur-2xl fixed top-0 w-full z-50 border-b border-outline/15 shadow-sm">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-4 flex items-center justify-between gap-4"><div class="flex items-center gap-3">
-<label id="mobile-menu-open" class="hamburger text-primary md:hidden cursor-pointer" aria-label="Open menu" aria-controls="mobile-menu-drawer" aria-expanded="false">
-    <svg viewBox="0 0 32 32" class="fill-none hamburger-svg">
-      <path d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22" class="line line-top-bottom"></path>
-      <path d="M7 16 27 16" class="line"></path>
-    </svg>
-  </label>
-<div class="flex items-center gap-4">
-<div class="rounded-3xl bg-surface-container-highest p-2 md:py-2 md:px-3 soft-elevation">
-<img alt="The Devotional Touch" class="h-6 md:h-8 w-auto" src="uploads/logo/tulsi-mala-logo-landscape.png"/>
-</div>
-<nav class="hidden md:flex items-center gap-4 text-sm font-medium text-primary/80">
-<a class="transition-colors hover:text-primary" href="#collection">Collection</a>
-<a class="transition-colors hover:text-primary" href="#sacred">Sacred</a>
-<a class="transition-colors hover:text-primary" href="#bhakti">Bhakti</a>
-<a class="transition-colors hover:text-primary" href="#explore">Explore</a>
-<a class="transition-colors hover:text-primary" href="#guidance">Guidance</a>
-</nav>
-</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-4 flex items-center justify-between gap-4">
+  <!-- Left: Logo and Mobile Menu -->
+  <div class="flex items-center gap-3">
+    <label id="mobile-menu-open" class="hamburger text-primary md:hidden cursor-pointer" aria-label="Open menu" aria-controls="mobile-menu-drawer" aria-expanded="false">
+      <svg viewBox="0 0 32 32" class="fill-none hamburger-svg">
+        <path d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22" class="line line-top-bottom"></path>
+        <path d="M7 16 27 16" class="line"></path>
+      </svg>
+    </label>
+    <div class="rounded-3xl bg-surface-container-highest p-2 md:py-2 md:px-3 soft-elevation">
+      <img alt="The Devotional Touch" class="h-6 md:h-8 w-auto" src="uploads/logo/tulsi-mala-logo-landscape.png"/>
+    </div>
   </div>
+
+  <!-- Center: Navigation Menu (Desktop only) -->
+  <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-primary/80 absolute left-1/2 transform -translate-x-1/2 group">
+    <a class="transition-colors hover:text-primary" href="#home">Home</a>
+    <a class="transition-colors hover:text-primary" href="#products">Products</a>
+    <a class="transition-colors hover:text-primary" href="#help">Help</a>
+    <div class="relative">
+      <button class="transition-colors hover:text-primary flex items-center gap-1">
+        Others
+        <span class="material-symbols-outlined text-base">expand_more</span>
+      </button>
+      <div class="absolute left-0 top-full mt-2 w-64 bg-white rounded-2xl shadow-soft border border-outline/15 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2 z-50">
+        <a href="#terms-conditions" class="block px-4 py-3 hover:bg-surface-container transition-colors text-primary text-sm">Terms & Conditions</a>
+        <a href="#return-exchange" class="block px-4 py-3 hover:bg-surface-container transition-colors text-primary text-sm">Return & Exchange Policy</a>
+        <a href="#privacy" class="block px-4 py-3 hover:bg-surface-container transition-colors text-primary text-sm">Privacy Policy</a>
+        <a href="#payment-security" class="block px-4 py-3 hover:bg-surface-container transition-colors text-primary text-sm">Payment & Security</a>
+        <a href="#terms-of-use" class="block px-4 py-3 hover:bg-surface-container transition-colors text-primary text-sm">Terms Of Use</a>
+        <a href="#cancellation-policy" class="block px-4 py-3 hover:bg-surface-container transition-colors text-primary text-sm">RETURN/ EXCHANGE/ CANCELLATION POLICY</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Right: Search -->
   <div class="relative">
     <input type="text" id="search-input" placeholder="Search products..." class="hidden md:block px-4 py-2 rounded-full border border-outline/20 bg-surface-container text-primary placeholder-outline text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary w-48"/>
     <div id="search-suggestions" class="hidden absolute top-full right-0 mt-2 w-80 bg-surface rounded-2xl shadow-soft border border-outline/15 max-h-96 overflow-y-auto z-50">
@@ -225,11 +251,21 @@
 <button id="mobile-menu-close" class="material-symbols-outlined icon-button text-primary" aria-label="Close menu">close</button>
 </div>
 <div class="flex flex-col gap-4 p-5">
-<a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container-low hover:text-primary" href="#collection">Collection</a>
-<a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container-low hover:text-primary" href="#sacred">Sacred</a>
-<a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container-low hover:text-primary" href="#bhakti">Bhakti</a>
-<a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container-low hover:text-primary" href="#explore">Explore</a>
-<a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container-low hover:text-primary" href="#guidance">Guidance</a>
+<a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container-low hover:text-primary" href="#home">Home</a>
+<a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container-low hover:text-primary" href="#products">Products</a>
+<a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container-low hover:text-primary" href="#help">Help</a>
+<button id="mobile-others-toggle" aria-expanded="false" class="w-full text-left rounded-2xl border border-outline/15 bg-surface-container-low px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container-low hover:text-primary flex items-center justify-between gap-3">
+  <span>Others</span>
+  <span class="material-symbols-outlined mobile-others-icon">expand_more</span>
+</button>
+<div id="mobile-others-panel" class="mobile-submenu rounded-2xl border border-outline/15 bg-surface-container-low p-4">
+  <a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container transition-colors" href="#terms-conditions">Terms & Conditions</a>
+  <a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container transition-colors" href="#return-exchange">Return & Exchange Policy</a>
+  <a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container transition-colors" href="#privacy">Privacy Policy</a>
+  <a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container transition-colors" href="#payment-security">Payment & Security</a>
+  <a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container transition-colors" href="#terms-of-use">Terms Of Use</a>
+  <a class="block rounded-2xl px-4 py-3 text-sm font-medium text-primary/90 transition-colors hover:bg-surface-container transition-colors" href="#cancellation-policy">RETURN/ EXCHANGE/ CANCELLATION POLICY</a>
+</div>
 </div>
 </div>
 </div>
@@ -1034,6 +1070,8 @@
     const mobileMenuOpen = document.getElementById('mobile-menu-open');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
     const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+    const mobileOthersToggle = document.getElementById('mobile-others-toggle');
+    const mobileOthersPanel = document.getElementById('mobile-others-panel');
     const mobileHeader = document.querySelector('header');
     const body = document.body;
     let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
@@ -1059,6 +1097,14 @@
             mobileMenuDrawer.setAttribute('aria-hidden', 'true');
             mobileMenuOpen?.setAttribute('aria-expanded', 'false');
             mobileMenuOpen?.classList.remove('is-open');
+            if (mobileOthersPanel) {
+                mobileOthersPanel.classList.remove('open');
+            }
+            if (mobileOthersToggle) {
+                mobileOthersToggle.setAttribute('aria-expanded', 'false');
+                const icon = mobileOthersToggle.querySelector('.mobile-others-icon');
+                if (icon) icon.textContent = 'expand_more';
+            }
             setTimeout(() => mobileMenuDrawer.classList.add('pointer-events-none'), 300);
             body.style.overflow = '';
             isMenuOpen = false;
@@ -1070,6 +1116,15 @@
             e.preventDefault();
             e.stopPropagation();
             toggleMobileMenu(!isMenuOpen);
+        });
+    }
+    if (mobileOthersToggle && mobileOthersPanel) {
+        mobileOthersToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            const isOpen = mobileOthersPanel.classList.toggle('open');
+            mobileOthersToggle.setAttribute('aria-expanded', isOpen.toString());
+            const icon = mobileOthersToggle.querySelector('.mobile-others-icon');
+            if (icon) icon.textContent = isOpen ? 'expand_less' : 'expand_more';
         });
     }
     if (mobileMenuClose) {
