@@ -168,6 +168,11 @@
         .text-soft { color: rgba(32, 27, 16, 0.78); }
         .copy-smooth { letter-spacing: 0.01em; line-height: 1.72; }
         .hero-card { min-height: 380px; }
+        #search-input::placeholder { color: rgba(130, 116, 114, 0.6); }
+        #search-input::-webkit-autofill { -webkit-box-shadow: 0 0 0 1000px #fff8f1 inset; -webkit-text-fill-color: #2f1411; }
+        #search-suggestions::-webkit-scrollbar { width: 6px; }
+        #search-suggestions::-webkit-scrollbar-track { background: transparent; }
+        #search-suggestions::-webkit-scrollbar-thumb { background: rgba(130, 116, 114, 0.2); border-radius: 3px; }
     </style>
 </head>
 <body class="font-body-md text-body-md">
@@ -193,9 +198,25 @@
 </nav>
 </div>
   </div>
-  <button class="material-symbols-outlined icon-button text-primary" aria-label="Search">search</button>
+  <div class="relative">
+    <input type="text" id="search-input" placeholder="Search products..." class="hidden md:block px-4 py-2 rounded-full border border-outline/20 bg-surface-container text-primary placeholder-outline text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary w-48"/>
+    <div id="search-suggestions" class="hidden absolute top-full right-0 mt-2 w-80 bg-surface rounded-2xl shadow-soft border border-outline/15 max-h-96 overflow-y-auto z-50">
+    </div>
+  </div>
+  <button id="mobile-search-btn" class="material-symbols-outlined icon-button text-primary md:hidden" aria-label="Search">search</button>
 </div>
 </header>
+<!-- Mobile Search Modal -->
+<div id="mobile-search-modal" class="fixed inset-0 z-[9999] pointer-events-none opacity-0 transition-opacity duration-300 bg-black/20 backdrop-blur-sm" aria-hidden="true">
+  <div class="absolute inset-0 top-0 w-full bg-surface p-5 flex flex-col gap-4 h-full max-h-screen overflow-y-auto">
+    <div class="flex items-center gap-3">
+      <input type="text" id="mobile-search-input" placeholder="Search products..." class="flex-1 px-4 py-3 rounded-full border border-outline/20 bg-surface-container text-primary placeholder-outline text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary"/>
+      <button id="mobile-search-close" class="material-symbols-outlined icon-button text-primary" aria-label="Close search">close</button>
+    </div>
+    <div id="mobile-search-suggestions" class="flex-1 overflow-y-auto space-y-0">
+    </div>
+  </div>
+</div>
 <div id="mobile-menu-drawer" class="fixed inset-0 z-[9999] pointer-events-none opacity-0 transition-opacity duration-300" aria-hidden="true">
 <div id="mobile-menu-backdrop" class="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
 <div id="mobile-menu-panel" class="absolute left-0 top-0 h-full w-[84%] max-w-xs bg-surface text-primary shadow-[0_20px_60px_-20px_rgba(47,20,17,0.35)] transform -translate-x-full will-change-transform transform-gpu transition-transform duration-300 ease-out" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-heading">
@@ -521,6 +542,10 @@
     const loadingState = document.getElementById('loading-state');
     const emptyState = document.getElementById('empty-state');
     const errorState = document.getElementById('error-state');
+    const searchInput = document.getElementById('search-input');
+    const searchSuggestions = document.getElementById('search-suggestions');
+
+    let allProducts = {};
 
     // State Management Functions
     function showLoadingState() {
@@ -621,6 +646,7 @@
     function renderProducts(products) {
         try {
             console.log('Firebase products received:', products);
+            allProducts = products;
             hideStates();
             console.log('Rendering products...');
 
@@ -714,6 +740,191 @@
             console.error('Fetch error:', error);
             showErrorState();
         }
+    }
+
+    // Search Functionality
+    function searchProducts(query) {
+        if (!query.trim() || query.length === 0) {
+            searchSuggestions.classList.add('hidden');
+            return;
+        }
+
+        const lowerQuery = query.toLowerCase();
+        const matchedProducts = [];
+
+        Object.entries(allProducts).forEach(([key, product]) => {
+            if (validateProduct(product)) {
+                const name = (product.name || '').toLowerCase();
+                const description = (product.description || '').toLowerCase();
+                
+                if (name.includes(lowerQuery) || description.includes(lowerQuery)) {
+                    matchedProducts.push({...product, id: key});
+                }
+            }
+        });
+
+        displaySearchSuggestions(matchedProducts);
+    }
+
+    function displaySearchSuggestions(products) {
+        if (products.length === 0) {
+            searchSuggestions.innerHTML = '<div class="p-4 text-center text-outline">No products found</div>';
+            searchSuggestions.classList.remove('hidden');
+            return;
+        }
+
+        let suggestionsHTML = '';
+        products.slice(0, 6).forEach(product => {
+            const price = formatPrice(product.price || 0);
+            suggestionsHTML += `
+                <div class="flex items-center gap-3 p-3 border-b border-outline/10 hover:bg-surface-container cursor-pointer transition-colors" onclick="searchSelectProduct('${product.name}', '${product.price}', '${product.image}')">
+                    <img src="${product.image}" alt="${product.name}" class="w-12 h-16 object-cover rounded-lg"/>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-label-md text-primary truncate font-medium">${product.name}</p>
+                        <p class="text-label-sm text-outline">₹${price}</p>
+                    </div>
+                </div>
+            `;
+        });
+
+        searchSuggestions.innerHTML = suggestionsHTML;
+        searchSuggestions.classList.remove('hidden');
+    }
+
+    function searchSelectProduct(name, price, image) {
+        openCheckout({
+            name: name,
+            price: price,
+            image: image
+        });
+        searchInput.value = '';
+        searchSuggestions.classList.add('hidden');
+    }
+
+    // Search Event Listeners
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            searchProducts(e.target.value);
+        });
+
+        document.addEventListener('click', (e) => {
+            if (searchInput && searchSuggestions && !searchInput.contains(e.target) && !searchSuggestions.contains(e.target)) {
+                searchSuggestions.classList.add('hidden');
+            }
+        });
+
+        searchInput.addEventListener('focus', () => {
+            if (searchInput.value.trim()) {
+                searchProducts(searchInput.value);
+            }
+        });
+    }
+
+    // Mobile Search Functionality
+    const mobileSearchBtn = document.getElementById('mobile-search-btn');
+    const mobileSearchModal = document.getElementById('mobile-search-modal');
+    const mobileSearchInput = document.getElementById('mobile-search-input');
+    const mobileSearchClose = document.getElementById('mobile-search-close');
+    const mobileSearchSuggestions = document.getElementById('mobile-search-suggestions');
+
+    if (mobileSearchBtn) {
+        mobileSearchBtn.addEventListener('click', () => {
+            console.log('[Mobile Search] Opening search modal');
+            mobileSearchModal.classList.remove('pointer-events-none', 'opacity-0');
+            mobileSearchModal.setAttribute('aria-hidden', 'false');
+            body.style.overflow = 'hidden';
+            mobileSearchInput?.focus();
+        });
+    }
+
+    if (mobileSearchClose) {
+        mobileSearchClose.addEventListener('click', () => {
+            console.log('[Mobile Search] Closing search modal');
+            mobileSearchModal.classList.add('pointer-events-none', 'opacity-0');
+            mobileSearchModal.setAttribute('aria-hidden', 'true');
+            body.style.overflow = '';
+            mobileSearchInput.value = '';
+            mobileSearchSuggestions.innerHTML = '';
+        });
+    }
+
+    if (mobileSearchModal) {
+        mobileSearchModal.addEventListener('click', (e) => {
+            if (e.target === mobileSearchModal) {
+                mobileSearchClose?.click();
+            }
+        });
+    }
+
+    if (mobileSearchInput) {
+        mobileSearchInput.addEventListener('input', (e) => {
+            console.log('[Mobile Search] Input value:', e.target.value);
+            searchProductsMobile(e.target.value);
+        });
+
+        mobileSearchInput.addEventListener('focus', () => {
+            if (mobileSearchInput.value.trim()) {
+                searchProductsMobile(mobileSearchInput.value);
+            }
+        });
+    }
+
+    function searchProductsMobile(query) {
+        if (!query.trim() || query.length === 0) {
+            mobileSearchSuggestions.innerHTML = '';
+            return;
+        }
+
+        const lowerQuery = query.toLowerCase();
+        const matchedProducts = [];
+
+        Object.entries(allProducts).forEach(([key, product]) => {
+            if (validateProduct(product)) {
+                const name = (product.name || '').toLowerCase();
+                const description = (product.description || '').toLowerCase();
+                
+                if (name.includes(lowerQuery) || description.includes(lowerQuery)) {
+                    matchedProducts.push({...product, id: key});
+                }
+            }
+        });
+
+        displayMobileSearchSuggestions(matchedProducts);
+    }
+
+    function displayMobileSearchSuggestions(products) {
+        if (products.length === 0) {
+            mobileSearchSuggestions.innerHTML = '<div class="p-4 text-center text-outline">No products found</div>';
+            return;
+        }
+
+        let suggestionsHTML = '';
+        products.forEach(product => {
+            const price = formatPrice(product.price || 0);
+            suggestionsHTML += `
+                <div class="flex items-center gap-3 p-4 border-b border-outline/10 hover:bg-surface-container cursor-pointer transition-colors" onclick="searchSelectProductMobile('${product.name.replace(/'/g, "\\'")}', '${product.price}', '${product.image.replace(/'/g, "\\'")}')">
+                    <img src="${product.image}" alt="${product.name}" class="w-16 h-20 object-cover rounded-lg"/>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-label-md text-primary font-medium line-clamp-2">${product.name}</p>
+                        <p class="text-label-sm text-outline">₹${price}</p>
+                    </div>
+                </div>
+            `;
+        });
+
+        mobileSearchSuggestions.innerHTML = suggestionsHTML;
+    }
+
+    function searchSelectProductMobile(name, price, image) {
+        console.log('[Mobile Search] Product selected:', name);
+        openCheckout({
+            name: name,
+            price: price,
+            image: image
+        });
+        mobileSearchInput.value = '';
+        mobileSearchSuggestions.innerHTML = '';
+        mobileSearchClose?.click();
     }
 
     // Checkout Functionality
